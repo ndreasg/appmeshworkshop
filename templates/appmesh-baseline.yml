@@ -857,7 +857,7 @@ Resources:
       LaunchTemplateData:
         KeyName: !GetAtt KeyPair.Name
         ImageId: !Ref LatestAmiId
-        InstanceType: t2.medium
+        InstanceType: t3.medium
         InstanceInitiatedShutdownBehavior: terminate
         IamInstanceProfile:
           Arn: !GetAtt InstanceProfile.Arn
@@ -876,13 +876,13 @@ Resources:
                   yum install -y git gcc gcc-c++ make readline-devel openssl-devel sqlite-devel gmp-devel jq
                   
                   # Install rbenv
-                  git clone git://github.com/rbenv/rbenv.git /tmp/.rbenv
+                  git clone https://github.com/rbenv/rbenv.git /tmp/.rbenv
                   echo 'export PATH="/tmp/.rbenv/bin:/usr/local/bin:$PATH"' >> /tmp/.bashrc
                   echo 'eval "$(rbenv init -)"' >> /tmp/.bashrc
                   source /tmp/.bashrc
 
                   # Install ruby-build
-                  git clone git://github.com/rbenv/ruby-build.git /tmp/ruby-build
+                  git clone https://github.com/rbenv/ruby-build.git /tmp/ruby-build
                   cd /tmp/ruby-build
                   ./install.sh
 
