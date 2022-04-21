@@ -889,8 +889,9 @@ Resources:
                   rbenv install 2.5.1 && rbenv global 2.5.1
 
                   # Install rails and bundler
-                  gem install --force rails bundler
-                  gem update --system
+                  gem install bundler:1.17.3
+                  gem install --force rails
+                  #gem update --system
 
                   # Clone the repo and build the app
                   export RUBY_ROOT=/tmp/ecsdemo-frontend
